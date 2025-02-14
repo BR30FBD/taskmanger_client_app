@@ -82,7 +82,7 @@ export default function TaskListTable({data, setTask, setOpen, handleRefetch}) {
             <Droppable droppableId="tasks">
               {(provided) => (
                 <TableBody ref={provided.innerRef} {...provided.droppableProps}>
-                  {tasks
+                  {tasks?.length>0 ? tasks
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((task, index) => (
                       <Draggable key={task._id} draggableId={task._id} index={index}>
@@ -121,7 +121,9 @@ export default function TaskListTable({data, setTask, setOpen, handleRefetch}) {
                           </TableRow>
                         )}
                       </Draggable>
-                    ))}
+                    )):
+                  <p>No tasks found</p>
+                    }
                   {provided.placeholder}
                 </TableBody>
               )}

@@ -95,7 +95,7 @@ useEffect(() =>{
       <Fade in={open}>
         <Box sx={style}>
           <Typography id="transition-modal-title" variant="h6" component="h2">
-           {data?._id ? "Update Task" : "Add New Task"}
+           {formData?._id ? "Update Task" : "Add New Task"}
           </Typography>
 
           {/* Title Input */}

@@ -32,7 +32,9 @@ const MainPage = () => {
           <Button variant="contained" mt={20}   color="primary" onClick={handleOpen}>Add Task</Button>
 
           </Box>
-       {tasks?.length>0 && <TaskListTable data={tasks} setTask={setTask} handleRefetch={handleRefetch} setOpen={setOpen} />}
+       {tasks?.length>0 ? <TaskListTable data={tasks} setTask={setTask} handleRefetch={handleRefetch} setOpen={setOpen} />:
+       <h1>No Tasks Found</h1>
+       }
         <AddTaskModal handleClose={handleClose} open={open} data={task} handleRefetch={handleRefetch}  />
         </div>
     </>
